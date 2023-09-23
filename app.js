@@ -76,6 +76,12 @@ const server = http.createServer((req, res) => {
       });
     });
   } 
+  else if (req.method === 'GET' && req.url === '/') {
+    // Respond to GET /check
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Server is working.');
+  }
   else if(req.method === 'POST' && req.url === '/createAccount'){
 
   }
