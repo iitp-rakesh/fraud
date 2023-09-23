@@ -1,8 +1,6 @@
 const http = require('http');
 const mysql = require('mysql2');
 const querystring = require('querystring');
-const express = require('express');
-const bodyParser = require('body-parser');
 
 // Replace these with your own database credentials
 const dbConfig = {
@@ -85,14 +83,15 @@ const server = http.createServer((req, res) => {
         res.end('Server is working.');
     }
     else if (req.method === 'POST' && req.url === '/createAccount') {
-        const app = express();
+        let body = '';
 
-        // Middleware to parse JSON requests
-        app.use(bodyParser.json());
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
 
-        // Endpoint for creating an account
-        app.post('/createAccount', (req, res) => {
-            const { account_number, password } = req.body;
+        req.on('end', () => {
+            const userData = querystring.parse(body);
+            console.log(userData.account_number, userData.password);
 
             // Create a MySQL connection
             const connection = mysql.createConnection(dbConfig);
@@ -100,28 +99,93 @@ const server = http.createServer((req, res) => {
             connection.connect((err) => {
                 if (err) {
                     console.error('Error connecting to the database:', err);
-                    res.status(500).json({ success: false, message: 'Internal server error' });
+                    res.statusCode = 500;
+                    res.end('Internal server error');
                     return;
                 }
 
-                // Insert account data into the 'users' table
+                // Insert the user data into the database
                 const query = 'INSERT INTO users (account_number, password) VALUES (?, ?)';
 
-                connection.query(query, [account_number, password], (queryError) => {
-                    if (queryError) {
-                        console.error('Error querying the database:', queryError);
-                        res.status(500).json({ success: false, message: 'Internal server error' });
-                        connection.end();
-                        return;
-                    }
+                connection.query(
+                    query,
+                    [userData.account_number, userData.password],
+                    (queryError, results) => {
+                        if (queryError) {
+                            console.error('Error querying the database:', queryError);
+                            res.statusCode = 500;
+                            res.end('Internal server error');
+                            connection.end();
+                            return;
+                        }
 
-                    // Account created successfully
-                    res.status(201).json({ success: true, message: 'Account created' });
-                    connection.end();
-                });
+                        // User was successfully created
+                        res.statusCode = 201;
+                        res.setHeader('Content-Type', 'application/json');
+                        res.end(JSON.stringify({ success: true, message: 'Account created successfully' }));
+
+                        connection.end();
+                    }
+                );
             });
         });
     }
+    else if (req.method === 'POST' && req.url === '/login') {
+        let body = '';
+    
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+    
+        req.on('end', () => {
+            const loginData = querystring.parse(body);
+            console.log(loginData.account_number, loginData.password);
+    
+            // Create a MySQL connection
+            const connection = mysql.createConnection(dbConfig);
+    
+            connection.connect((err) => {
+                if (err) {
+                    console.error('Error connecting to the database:', err);
+                    res.statusCode = 500;
+                    res.end('Internal server error');
+                    return;
+                }
+    
+                // Check login credentials in the database
+                const query = 'SELECT * FROM users WHERE account_number = ? AND password = ?';
+    
+                connection.query(
+                    query,
+                    [loginData.account_number, loginData.password],
+                    (queryError, results) => {
+                        if (queryError) {
+                            console.error('Error querying the database:', queryError);
+                            res.statusCode = 500;
+                            res.end('Internal server error');
+                            connection.end();
+                            return;
+                        }
+    
+                        if (results.length > 0) {
+                            // Login successful
+                            res.statusCode = 200;
+                            res.setHeader('Content-Type', 'application/json');
+                            res.end(JSON.stringify({ success: true, message: 'Login successful' }));
+                        } else {
+                            // Incorrect login credentials
+                            res.statusCode = 401;
+                            res.setHeader('Content-Type', 'application/json');
+                            res.end(JSON.stringify({ success: false, message: 'Incorrect credentials' }));
+                        }
+    
+                        connection.end();
+                    }
+                );
+            });
+        });
+    }
+    
     else {
         res.statusCode = 404;
         res.end('Not Found');
