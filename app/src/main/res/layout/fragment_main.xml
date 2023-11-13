@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.mainactivity.MainFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/welcome"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+        <TextView
+            android:id="@+id/tvBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="Balance" />
+        <TextView
+            android:id="@+id/tvBalanceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="$ 12000"
+            android:layout_below="@+id/tvBalance"
+            />
+
+            <Button
+                android:id="@+id/btnPay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="10dp"
+                android:text="Pay"
+                android:textSize="30sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            >
+            <TextView
+                android:id="@+id/tvTransaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recent Transaction"
+                android:textSize="18dp"
+                />
+            <TextView
+                android:id="@+id/tvSeeAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See All>>"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                />
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+</FrameLayout>

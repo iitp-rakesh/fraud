@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Transaction Title -->
+        <TextView
+            android:id="@+id/transactionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transaction Title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/transactionDate"
+            />
+
+        <!-- Transaction Date -->
+        <TextView
+            android:id="@+id/transactionDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date: January 1, 2023"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/transactionTitle"/>
+
+        <!-- Transaction Amount -->
+        <TextView
+            android:id="@+id/transactionAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$100.00"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

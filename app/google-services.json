@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "313787267026",
+    "firebase_url": "https://fraudguard-a1654-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "fraudguard-a1654",
+    "storage_bucket": "fraudguard-a1654.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313787267026:android:363ec908763ef608d7ba0b",
+        "android_client_info": {
+          "package_name": "com.example.fraud"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgws8EbHkxwgFnjLMLZr1NSw4NJh3LqJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.mainactivity.TransactionInfo">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/merchantName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paid to Amazon"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/transactionAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/merchantName"
+            android:text="$500"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/transactionDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="January 1, 2023"
+            android:textAlignment="center"
+            android:layout_below="@id/transactionAmount"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/transactionStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/transactionDate"
+            android:text="Successful"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/tvTid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transaction ID:"
+            android:layout_below="@id/transactionStatus"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="30dp"
+            />
+        <TextView
+            android:id="@+id/transactionId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1234567890"
+            android:layout_below="@id/tvTid"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:id="@+id/tvTm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transaction Mode:"
+            android:layout_below="@id/transactionId"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/transactionMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Credit Card\nXXXX-XXXX-XXXX-1234"
+            android:layout_below="@id/tvTm"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:id="@+id/tvNh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Need Help?"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_above="@+id/tvContact"
+            />
+        <TextView
+            android:id="@+id/tvContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact your Branch"
+            android:layout_marginBottom="40dp"
+            android:textAlignment="center"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+
+
+</FrameLayout>

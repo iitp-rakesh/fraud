@@ -92,7 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            android:hint="Password">
+            android:hint="Password Min 8 characters">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordEditText"

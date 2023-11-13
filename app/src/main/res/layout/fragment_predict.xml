@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/account_number_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Account Number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/account_number_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/first_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First Name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/first_name_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/last_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Last Name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/last_name_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/date_of_birth_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date of Birth">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/date_of_birth_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/gender_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Gender">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/gender_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phone_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/address_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/city_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/city_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="State">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/state_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/zip_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Zip">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/zip_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/country_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Country">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/country_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/occupation_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Occupation">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/occupation_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/balance_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Balance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/balance_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/save_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
