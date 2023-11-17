@@ -7,4 +7,8 @@
     "start": "node api.js",
     "build": "npm install"
   },
+  "engines": {
+    "node": "14.17.0",
+    "npm": ">=7.0.0"
+  }
 }
