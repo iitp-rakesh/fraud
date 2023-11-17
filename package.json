@@ -2,7 +2,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "firebase-admin": "^10.0.0"
-    // Add any other dependencies you might have
   },
   "scripts": {
     "start": "node api.js",
