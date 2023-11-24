@@ -2,15 +2,19 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+require('dotenv').config();
 
 const admin = require("firebase-admin");
 const serviceAccount = require("./firebase.json");
 
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://fraudguard-a1654-default-rtdb.asia-southeast1.firebasedatabase.app/"
+    credential: admin.credential.cert({
+        project_id: process.env.FIREBASE_PROJECT_ID,
+        private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+        client_email: process.env.FIREBASE_CLIENT_EMAIL,
+    }),
+    databaseURL: "https://fraudguard-a1654-default-rtdb.asia-southeast1.firebasedatabase.app/",
 });
-
 app.post('/transactions/:id', (req, res) => {
     const transaction = req.body;
     const token = req.headers['token'];
